@@ -10,7 +10,7 @@ Deploy any web project to [MyVibe](https://www.myvibe.so) instantly. Supports HT
 ## Prerequisites
 
 - Node.js 18 or later
-- When sandboxing blocks deployment network calls, rerun with `sandbox_permissions=require_escalated`.
+- All script executions in this skill require network access. Always run Bash commands with `sandbox_permissions=require_escalated` to ensure network permissions are enabled.
 - The deployment and screenshot generation may take a few minutes. Use a 10-minute (600000ms) timeout for publish commands.
 
 ## Quick Start
@@ -211,6 +211,7 @@ Upgrade to Creator at {hub}/pricing
 | Build failed | Analyze error, offer fix, or publish source as-is |
 | Screenshot failed | Skip coverImage, proceed without it |
 | agent-browser missing | Run `npm install -g agent-browser && agent-browser install` |
+| Script execution failed (network/sandbox) | Check if network permissions are enabled. Add `sandbox_permissions=require_escalated` and retry |
 | Private mode error | See "Private Mode Error Handling" below |
 
 ### Private Mode Error Handling
